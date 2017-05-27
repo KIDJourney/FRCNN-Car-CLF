@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图像分割</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}" >
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css') }}">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{ url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form method="post" enctype="multipart/form-data" action="/segimage">
+                <input type="file" name="file">
+                <p style="text-align:right;margin-top:20px;">
+                    <button type="submit" class="btn btn-lg btn-primary">上传</button>
+                </p>
+
+            </form>
+        </div>
+    </div>
+        <form method=post enctype=multipart/form-data action="/segimage" class="form-inline">
+            <div class="form-group">
+                <label>上传新文件</label>
+                <input type=file name=file class="form-control">
+            </div>
+            <button type="submit" class="btn btn-default">上传</button>
+        </form>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

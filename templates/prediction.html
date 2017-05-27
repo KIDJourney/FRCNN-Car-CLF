@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>车型预测</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}" >
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-theme.css') }}">
+    <!-- Latest compiled and minified JavaScript -->
+    <style>
+
+        .mt40 { margin-top: 40px; }
+
+.panel { position: relative; overflow: hidden; display: block; border-radius: 0 !important;  border-width:1px;}
+.panel-default { border-color: #ebedef !important; }
+.panel .panel-body { position: relative; padding: 0 !important; overflow: hidden; height: auto; }
+.panel .panel-body img{
+    width:150%;
+    height:150%;
+    margin: 5px;
+}
+.panel .panel-footer { padding: 8px !important; background-color: #f9f9f9 !important; border-bottom-right-radius: 0 !important; border-bottom-left-radius: 0 !important; }
+.panel .panel-footer h4 { display: inline; font: 400 normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #34495e; margin: 0 !important; padding: 0 !important; }
+.panel .panel-footer div { width: 15px; display: inline; font: 300 normal 1.125em "Roboto",Arial,Verdana,sans-serif; color: #34495e; text-align: center; background-color: transparent !important; border: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container mt40">
+        <div class="row">
+                    <div class="panel-body">
+                        <img src="{{ segFile }}" />
+                    </div>
+                    <div class="panel-footer">
+                        <h4>预测结果</h4>
+                    </div>
+        </div>
+        <div class="row">
+            <button type="button" id="ret_btn" class="btn btn-info" style="margin:15px;" >继续上传图片</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+    <script>
+        $("#ret_btn").click(function () {
+             window.location.href="/";
+        });
+    </script>
+</body>
